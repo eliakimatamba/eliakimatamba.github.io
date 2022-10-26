@@ -1,4 +1,4 @@
 # portfolio
 ##
-For [portfolio](https://www.eliakimatamba.github.io) preview.
+For [portfolio](eliakimatamba.github.io) preview.
 ##
