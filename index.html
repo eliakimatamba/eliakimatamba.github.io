@@ -365,7 +365,6 @@
   .resume-cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     gap: 20px;
   }
 
@@ -374,8 +373,10 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    flex-basis: calc(33.33% - 20px); /* Adjust the width as needed for responsiveness */
+    flex-basis: calc(50% - 20px); /* Two cards per row on medium-sized displays */
     box-sizing: border-box;
+    transition: transform 0.2s; /* Smooth hover or tap effect */
+    cursor: pointer; /* Add pointer cursor for interaction */
   }
 
   .resume-card h3 {
@@ -400,10 +401,21 @@
     left: 0;
     color: #007bff; /* Adjust the color as needed */
   }
-</style>
 
+  /* On hover or tap, scale up the card for interaction */
+  .resume-card:hover,
+  .resume-card:focus {
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 768px) {
+    .resume-card {
+      flex-basis: calc(100% - 20px); /* One card per row on small displays */
+    }
+  }
+</style>
+    
 <script>
-  // Sample data for resume items
   const resumeData = [
     {
       title: 'Web Developer',
@@ -485,9 +497,6 @@
   });
 </script>
 
-
-
-<div class="container">
         <div class="row">
           <div class="col-lg-6" data-aos="fade-up">
             <h3 class="resume-title">Sumary</h3>
