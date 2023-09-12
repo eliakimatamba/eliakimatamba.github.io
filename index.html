@@ -62,6 +62,78 @@
       </nav><!-- .nav-menu -->
     </div>
   </header><!-- End Header -->
+<!-- ======= Hurrah, It's My Birthday ====== -->
+<section id="birthday-section">
+    <style>
+        /* CSS for the celebration animation */
+        @keyframes confetti-fall {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(100vh);
+            }
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #FFD700; /* Yellow confetti color */
+            border-radius: 50%;
+            opacity: 0.8;
+        }
+    </style>
+
+
+        <div id="birthday-reminder">
+            <p>It's my birthday today! 🎉🥳</p>
+            <p>Happy Birthday!</p>
+        </div>
+
+        <script>
+            // Get the current date
+            const currentDate = new Date();
+
+            // Set the birthdate (Dec 8th, 1997)
+            const birthdate = new Date('1997-12-08');
+
+            // Check if it's the birthday
+            if (currentDate.getMonth() === birthdate.getMonth() && currentDate.getDate() === birthdate.getDate()) {
+                // Display the birthday reminder
+                const birthdayReminder = document.getElementById('birthday-reminder');
+                birthdayReminder.style.display = 'block';
+
+                // Create confetti elements
+                const confettiContainer = document.createElement('div');
+                confettiContainer.style.position = 'fixed';
+                confettiContainer.style.top = '0';
+                confettiContainer.style.left = '0';
+                confettiContainer.style.width = '100%';
+                confettiContainer.style.height = '100%';
+                confettiContainer.style.pointerEvents = 'none';
+
+                // Randomize confetti celebration intervals for the day
+                const randomizeConfetti = () => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.animationDuration = Math.random() * 3 + 2 + 's'; // Randomize animation duration
+                    confettiContainer.appendChild(confetti);
+
+                    // Schedule the next confetti drop
+                    const nextDelay = Math.random() * 2000; // Randomize the interval between confetti drops (up to 2 seconds)
+                    setTimeout(randomizeConfetti, nextDelay);
+                };
+
+                // Start the confetti celebration
+                randomizeConfetti();
+
+                // Append confetti to the document
+                document.body.appendChild(confettiContainer);
+            }
+        </script>
+    </section><!-- End of birthday section -->
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
