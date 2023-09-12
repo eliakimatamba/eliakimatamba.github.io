@@ -177,7 +177,6 @@
 
   </div>
   <style>
-    /* Add your localized CSS styles here */
 .about-title {
   text-align: center;
   margin-bottom: 30px;
@@ -222,71 +221,14 @@
 .additional-info li {
   margin-bottom: 10px;
 }
-   /* CSS for the escalator scroll effect */
-.about.active {
-  background: linear-gradient(
-    to right,
-    transparent 0%,
-    transparent 30%,
-    #fff 30%,
-    #fff 70%,
-    transparent 70%,
-    transparent 100%
-  );
-  background-size: 200% 100%;
-  animation: escalator 10s linear infinite;
-}
-
-@keyframes escalator {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
-}
-
 </style>
 
- 
 <script>
   var birthDate = new Date("1997-12-08");
   var currentDate = new Date();
   var age = currentDate.getFullYear() - birthDate.getFullYear();
   document.getElementById("age").textContent = age;
 </script>
- <script>
-  // JavaScript to trigger the scroll animation
-document.addEventListener("DOMContentLoaded", function () {
-  var aboutSection = document.querySelector("#about");
-  var isAnimating = false;
-
-  // Function to check if the element is in the viewport
-  function isElementInViewport(el) {
-    var rect = el.getBoundingClientRect();
-    return (
-      rect.top >= 0 &&
-      rect.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight)
-    );
-  }
-
-  // Function to handle the scroll animation
-  function handleScroll() {
-    if (!isAnimating && isElementInViewport(aboutSection)) {
-      isAnimating = true;
-      aboutSection.classList.add("active");
-    }
-  }
-
-  // Listen for scroll events
-  window.addEventListener("scroll", handleScroll);
-
-  // Initial check in case the section is already in the viewport on page load
-  handleScroll();
-});
-
- </script>
 
 </section><!-- ======= End of About Section ======= -->
 
