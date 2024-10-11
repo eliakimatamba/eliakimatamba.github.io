@@ -53,6 +53,7 @@
       </header>
       <!-- End Header -->
       <!-- ======= Hero Section ======= -->
+      <!--
       <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
          <div class="hero-container" data-aos="fade-in">
             <h1>Hi!</h1>
@@ -75,6 +76,67 @@
                "></span></p>
          </div>
       </section>
+      -->
+      <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-container" data-aos="fade-in">
+        <h1>Hi!</h1>
+        <h1 id="name">I'm Eliakim Atamba</h1>
+        <br>
+        <p> 
+            <span class="typed" id="typed-main" data-typed-items="
+               A Software Engineer,
+               A Web Developer,
+               An Application Developer,
+               A Database Administrator,
+               A System Analyst,
+               A Network Engineer,
+               An IT Consultant,
+               A QA Engineer, 
+               A Software Architect, 
+               A Business Analyst, 
+               A Project Manager,
+               A Mathematics and Computer Science Researcher,
+               A Graphic Designer 
+               "></span>
+        </p>
+        <p id="typed-specialties" style="display:none;">
+            <span class="typed-specialties"></span>
+        </p>
+    </div>
+</section>
+<script>
+// Initialize the first typing effect for specialties
+var typedMain = new Typed('.typed', {
+    stringsElement: '#typed-main',
+    typeSpeed: 50,
+    backSpeed: 50,
+    backDelay: 1000,
+    startDelay: 1000,
+    loop: false,
+    onComplete: function() {
+        // Remove the name and start typing the specialties
+        document.getElementById('name').style.display = 'none';
+        
+        // Show the second paragraph for specialties
+        document.getElementById('typed-specialties').style.display = 'block';
+        
+        // Start typing the specialties
+        new Typed('.typed-specialties', {
+            strings: [
+                "Code with Purpose. Tested for Excellence.",
+                "Innovating Through Development, Perfecting Through Testing.",
+                "Building Software. Ensuring Quality.",
+                "From Concept to Code, From Code to Perfection.",
+                "Develop. Test. Deliver."
+            ],
+            typeSpeed: 50,
+            backSpeed: 50,
+            backDelay: 1000,
+            loop: false
+        });
+    }
+});
+</script>
       <!-- End Hero -->
       <main id="main">
          <!-- ======= About Section ======= -->
