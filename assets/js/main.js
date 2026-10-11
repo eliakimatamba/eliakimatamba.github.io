@@ -142,6 +142,22 @@
   }
 
   /**
+   * Skills intro type effect (cycles through speciality categories)
+   */
+  const typedSkills = select('.typed-skills')
+  if (typedSkills) {
+    let typedSkillsStrings = typedSkills.getAttribute('data-typed-items')
+    typedSkillsStrings = typedSkillsStrings.split(',')
+    new Typed('.typed-skills', {
+      strings: typedSkillsStrings,
+      loop: true,
+      typeSpeed: 55,
+      backSpeed: 30,
+      backDelay: 1600
+    });
+  }
+
+  /**
    * Skills animation
    */
   let skilsContent = select('.skills-content');

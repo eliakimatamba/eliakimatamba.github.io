@@ -281,7 +281,7 @@ section {
   display: block;
   width: 50px;
   height: 3px;
-  background: #149ddd;
+  background: linear-gradient(90deg, #149ddd, #7c5cff);
   bottom: 0;
   left: 0;
 }
@@ -317,6 +317,306 @@ section {
 }
 .about .content p:last-child {
   margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# About (professional profile layout)
+--------------------------------------------------------------*/
+.about-pro {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 46px;
+  align-items: start;
+}
+.about-profile {
+  position: relative;
+  padding: 38px 30px 30px;
+  border-radius: 18px;
+  background: linear-gradient(160deg, #071324 0%, #0d2745 100%);
+  color: #dbe6f4;
+  box-shadow: 0 30px 70px -34px rgba(7, 19, 36, 0.75);
+  overflow: hidden;
+  text-align: center;
+}
+.about-profile::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #149ddd, #37b3ed 60%, #7c5cff);
+}
+.about-profile::after {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  right: -90px;
+  top: -90px;
+  background: radial-gradient(circle, rgba(20, 157, 221, 0.35), transparent 70%);
+  pointer-events: none;
+}
+.about-avatar {
+  width: 134px;
+  height: 134px;
+  margin: 6px auto 18px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, #149ddd, #7c5cff);
+  position: relative;
+  z-index: 1;
+}
+.about-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #071324;
+  display: block;
+}
+.about-profile h3 {
+  position: relative;
+  z-index: 1;
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 4px;
+}
+.about-profile .about-role {
+  position: relative;
+  z-index: 1;
+  color: #8fb6d8;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  margin-bottom: 16px;
+}
+.about-status {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12.5px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  color: #38d39f;
+  background: rgba(56, 211, 159, 0.1);
+  border: 1px solid rgba(56, 211, 159, 0.35);
+  padding: 5px 12px;
+  border-radius: 40px;
+  margin-bottom: 24px;
+}
+.about-status::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #38d39f;
+  box-shadow: 0 0 0 3px rgba(56, 211, 159, 0.2);
+}
+.about-meta {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+}
+.about-meta li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 13px;
+  line-height: 1.5;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: #c2d3e6;
+}
+.about-meta li:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.about-meta li i {
+  color: #149ddd;
+  font-size: 17px;
+  line-height: 1.4;
+}
+.about-meta li strong {
+  color: #fff;
+  font-weight: 600;
+}
+.about-actions {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.about-actions .btn-pro {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+.about-actions .btn-pro.primary {
+  background: #149ddd;
+  color: #fff;
+}
+.about-actions .btn-pro.primary:hover {
+  background: #37b3ed;
+  color: #fff;
+  transform: translateY(-2px);
+}
+.about-actions .btn-pro.ghost {
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+.about-actions .btn-pro.ghost:hover {
+  border-color: #149ddd;
+  color: #149ddd;
+  transform: translateY(-2px);
+}
+.about-body {
+  padding-top: 2px;
+}
+.about-eyebrow {
+  display: inline-block;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #149ddd;
+  margin-bottom: 14px;
+}
+.about-headline {
+  font-family: "Poppins", sans-serif;
+  font-size: 30px;
+  line-height: 1.35;
+  font-weight: 700;
+  color: #173b6c;
+  margin-bottom: 20px;
+}
+.about-body p {
+  color: #4a5b70;
+  font-size: 15.5px;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+.about-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 24px 0 30px;
+}
+.about-chips span {
+  font-size: 12.5px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  color: #173b6c;
+  background: #eef4fb;
+  border: 1px solid #dce8f8;
+  padding: 7px 14px;
+  border-radius: 40px;
+  transition: 0.3s;
+}
+.about-chips span:hover {
+  background: #149ddd;
+  border-color: #149ddd;
+  color: #fff;
+}
+.about-highlights {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.about-highlight {
+  background: #fff;
+  border: 1px solid #e6eef8;
+  border-left: 3px solid #149ddd;
+  border-radius: 10px;
+  padding: 18px 18px 16px;
+  transition: 0.3s;
+}
+.about-highlight:hover {
+  box-shadow: 0 18px 40px -22px rgba(23, 59, 108, 0.5);
+  transform: translateY(-3px);
+}
+.about-highlight i {
+  color: #149ddd;
+  font-size: 22px;
+}
+.about-highlight h4 {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #173b6c;
+  margin: 10px 0 6px;
+}
+.about-highlight p {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #5b6b80;
+  margin: 0;
+}
+
+/*--------------------------------------------------------------
+# Skills intro typewriter
+--------------------------------------------------------------*/
+.skills-intro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px;
+  margin: -8px 0 40px;
+  font-family: "Poppins", sans-serif;
+}
+.skills-intro .skills-intro-label {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: #7b8aa1;
+}
+.skills-intro .typed-skills {
+  font-size: 24px;
+  font-weight: 700;
+  color: #173b6c;
+}
+.skills-intro .typed-cursor {
+  color: #149ddd;
+  font-weight: 700;
+}
+
+@media (max-width: 991px) {
+  .about-pro {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .about-profile {
+    max-width: 460px;
+    margin: 0 auto;
+  }
+  .about-headline {
+    font-size: 26px;
+  }
+}
+@media (max-width: 575px) {
+  .about-highlights {
+    grid-template-columns: 1fr;
+  }
+  .skills-intro .typed-skills {
+    font-size: 20px;
+  }
 }
 
 /*--------------------------------------------------------------
