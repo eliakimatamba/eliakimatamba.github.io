@@ -258,6 +258,43 @@
   });
 
   /**
+   * About capabilities carousel
+   */
+  const aboutCapabilities = select('.about-capabilities')
+  if (aboutCapabilities) {
+    new Swiper('.about-capabilities', {
+      slidesPerView: 1,
+      spaceBetween: 24,
+      speed: 600,
+      grabCursor: true,
+      watchSlidesProgress: true,
+      loop: true,
+      keyboard: {
+        enabled: true,
+        onlyInViewport: true
+      },
+      autoplay: {
+        delay: 4500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true
+      },
+      pagination: {
+        el: '.about-carousel .swiper-pagination',
+        clickable: true
+      },
+      navigation: {
+        nextEl: '.about-carousel .carousel-btn.next',
+        prevEl: '.about-carousel .carousel-btn.prev'
+      },
+      breakpoints: {
+        0: { slidesPerView: 1, spaceBetween: 16 },
+        640: { slidesPerView: 2, spaceBetween: 20 },
+        992: { slidesPerView: 3, spaceBetween: 24 }
+      }
+    })
+  }
+
+  /**
    * Animation on scroll
    */
   window.addEventListener('load', () => {
