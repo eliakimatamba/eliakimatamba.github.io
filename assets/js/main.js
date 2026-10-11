@@ -297,6 +297,49 @@
   }
 
   /**
+   * Ambient background: device-adaptive parallax + scroll progress
+   */
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const isTouch = window.matchMedia('(hover: none), (pointer: coarse)').matches
+  if (isTouch) {
+    document.documentElement.classList.add('is-touch')
+  }
+
+  const bgParallax = select('.bg-parallax')
+  const progressBar = select('.scroll-progress')
+  const isSmallScreen = () => window.innerWidth < 992
+
+  let scrollQueued = false
+  const onScrollUpdate = () => {
+    const y = window.scrollY || document.documentElement.scrollTop || 0
+    const max = document.documentElement.scrollHeight - window.innerHeight
+
+    if (bgParallax && !reduceMotion && !isTouch && !isSmallScreen()) {
+      bgParallax.style.transform = 'translate3d(' +
+        (Math.sin(y * 0.0006) * 8).toFixed(1) + 'px, ' +
+        (-y * 0.05).toFixed(1) + 'px, 0)'
+    }
+
+    if (progressBar) {
+      const ratio = max > 0 ? Math.min(y / max, 1) : 0
+      progressBar.style.transform = 'scaleX(' + ratio.toFixed(4) + ')'
+    }
+    scrollQueued = false
+  }
+  const requestScrollUpdate = () => {
+    if (!scrollQueued) {
+      scrollQueued = true
+      window.requestAnimationFrame(onScrollUpdate)
+    }
+  }
+
+  if (bgParallax && progressBar) {
+    window.addEventListener('scroll', requestScrollUpdate, { passive: true })
+    window.addEventListener('resize', requestScrollUpdate)
+    onScrollUpdate()
+  }
+
+  /**
    * Animation on scroll
    */
   window.addEventListener('load', () => {

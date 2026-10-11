@@ -3,6 +3,7 @@
    <head>
       <meta charset="utf-8">
       <meta content="width=device-width, initial-scale=1.0" name="viewport">
+      <meta name="theme-color" content="#080c09">
       <title>Eliakim Atamba | AI/ML, Systems, DevOps &amp; UI/UX Engineer</title>
       <meta content="Eliakim Atamba — AI/ML Engineer, Systems Software &amp; DevOps Engineer, and UI/UX Designer &amp; Illustrator. Portfolio of applied machine learning, distributed systems, DevOps and design work." name="description">
       <meta content="Eliakim Atamba, AI/ML Engineer, Systems Software Engineer, DevOps Engineer, UI/UX Designer, Illustrator, Machine Learning, Distributed Systems, Nairobi Kenya" name="keywords">
@@ -20,8 +21,19 @@
       <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
       <!-- Template Main CSS File -->
       <link href="assets/css/style.css" rel="stylesheet">
+      <!-- Olive Command theme (overrides) -->
+      <link href="assets/css/theme-olive.css" rel="stylesheet">
    </head>
    <body>
+      <!-- ======= Ambient background ======= -->
+      <div class="bg-fx" aria-hidden="true">
+         <div class="bg-parallax">
+            <span class="orb orb-1"></span>
+            <span class="orb orb-2"></span>
+            <span class="orb orb-3"></span>
+         </div>
+      </div>
+      <div class="scroll-progress" aria-hidden="true"></div>
       <!-- ======= Mobile nav toggle button ======= -->
       <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
       <!-- ======= Header ======= -->
@@ -354,10 +366,10 @@ var typedMain = new Typed('.typed', {
                   font-size: 15px;
                   text-transform: uppercase;
                   letter-spacing: .5px;
-                  color: #050d18;
-                  margin: 6px 0 16px;
-                  padding-bottom: 6px;
-                  border-bottom: 2px solid #dce8f8;
+                   color: #eef4ea;
+                   margin: 6px 0 16px;
+                   padding-bottom: 6px;
+                   border-bottom: 2px solid rgba(163, 197, 100, 0.28);
                   }
                   .skills .skill-category:not(:first-child) {
                   margin-top: 28px;
@@ -521,16 +533,18 @@ var typedMain = new Typed('.typed', {
                   flex-wrap: wrap;
                   gap: 20px;
                   }
-                  .resume-card {
-                  background-color: #f7f7f7;
-                  padding: 20px;
-                  border-radius: 10px;
-                  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                  flex-basis: calc(50% - 20px); /* Two cards per row on medium-sized displays */
-                  box-sizing: border-box;
-                  transition: transform 0.2s; /* Smooth hover or tap effect */
-                  cursor: pointer; /* Add pointer cursor for interaction */
-                  }
+                   .resume-card {
+                   background: linear-gradient(180deg, #111a13, #0c130e);
+                   border: 1px solid rgba(163, 197, 100, 0.16);
+                   color: #e7efe3;
+                   padding: 20px;
+                   border-radius: 10px;
+                   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.35);
+                   flex-basis: calc(50% - 20px); /* Two cards per row on medium-sized displays */
+                   box-sizing: border-box;
+                   transition: transform 0.2s, border-color 0.2s; /* Smooth hover or tap effect */
+                   cursor: pointer; /* Add pointer cursor for interaction */
+                   }
                   .resume-card h3 {
                   font-size: 24px;
                   margin-bottom: 10px;
@@ -544,19 +558,20 @@ var typedMain = new Typed('.typed', {
                   padding-left: 20px;
                   position: relative;
                   }
-                  .resume-card ul li:before {
-                  content: '\2022'; /* Bullet point */
-                  position: absolute;
-                  left: 0;
-                  color: #149ddd; /* Theme accent */
-                  }
-                  /* On hover or tap, scale up the card for interaction */
-                  .resume-card:hover,
-                  .resume-card:focus {
-                  transform: scale(1.05);
-                  background-color: #149ddd;
-                  color: white;
-                  }
+                   .resume-card ul li:before {
+                   content: '\2022'; /* Bullet point */
+                   position: absolute;
+                   left: 0;
+                   color: #a3c564; /* Theme accent */
+                   }
+                   /* On hover or tap, scale up the card for interaction */
+                   .resume-card:hover,
+                   .resume-card:focus {
+                   transform: scale(1.05);
+                   background: linear-gradient(135deg, #a3c564, #7f9b45);
+                   border-color: transparent;
+                   color: #0a0f0b;
+                   }
                   @media (max-width: 768px) {
                   .resume-card {
                   flex-basis: calc(100% - 20px); /* One card per row on small displays */
